@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+int count=0;
 
 class time
 {
@@ -6,7 +6,7 @@ public:
 	int hr;
 	int min;
 	int sec;
-}
+};
 
 class date
 {
@@ -14,14 +14,14 @@ public:
 	int dd;
 	int mm;
 	int yyyy;
-}
+};
 
 class chit
 {
 public:
 	date d;
 	string content;	
-}
+};
 
 class profile
 {
@@ -37,12 +37,19 @@ public:
 	//rechitted list
 	//following
 	//followers
-}
+};
 
 int signup()
 {
+return 1;
 }
 
 int login()
 {
+return 0;
+}
+
+int checkunameavail(string usname)
+{
+return 1;
 }

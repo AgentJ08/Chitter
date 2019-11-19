@@ -1,9 +1,9 @@
 #include<bits/stdc++.h>
-#include<stdlib.h>
 using namespace std;
+#include "assets.cpp"
 
 int adj[1000][1000];
-int login = 0;
+int checklogin = 0;
 
 int follow(int count, int x)
 {
@@ -13,7 +13,26 @@ int follow(int count, int x)
 void renderSignup()
 {
         cout<<"        SIGNUP!          "<<endl;
-
+	string finame,laname,usname,ubio;
+	date biday;
+	cout<<"Enter first name: ";
+	cin>>finame;
+	cout<<"Enter last name: ";
+        cin>>laname;
+	cout<<"Enter username: ";
+        cin>>usname;
+	while(!checkunameavail(usname)) {cout<<"Username already taken! Please try again."; cin>>usname;}
+	cout<<"Enter your birthday: ";
+	cout<<"Date: ";
+	cin>>biday.dd;
+	cout<<"Month: ";
+	cin>>biday.mm;
+	cout<<"Year: ";
+	cin>>biday.yyyy;
+	cout<<"Enter a short bio about you: ";
+        cin>>ubio;
+	if(signup()) cout<<"Signed up successfully!"<<endl;
+	else cout<<"Some error in signup! Please try again later."<<endl;
 }
 
 void renderLogin()
