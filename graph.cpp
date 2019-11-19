@@ -1,33 +1,60 @@
 #include<bits/stdc++.h>
+#include<stdlib.h>
+using namespace std;
 
-class date
+int adj[1000][1000];
+int login = 0;
+
+int follow(int count, int x)
 {
-public:
-	int dd;
-	int mm;
-	int yyyy;
+	adj[count-1][x-1] = 1;
 }
 
-class chit
+void renderSignup()
 {
-public:
-	
+        cout<<"        SIGNUP!          "<<endl;
+
 }
 
-class profile
+void renderLogin()
 {
-public:
-	string fname;
-	string sname;
+        cout<<"        LOGIN!          "<<endl;
 	string uname;
-	date bday;
-	date joined;
-	string bio;
-	//chitters list
-	//liked list
-	//rechitted list
-	//following
-	//followers
+	string pwd;
+	cout<<"Enter username: ";
+	cin>>uname;
+	cout<<"Enter password: ";
+	cin>>pwd;
+	if(uname!="" && pwd!="") cout<<"Checking credentials..."<<endl;//checkCredentials(uname, pwd);
+	else
+	{
+		cout<<"Invalid entry! Please try again.";
+		renderLogin();
+	}
 }
 
+void renderWhat()
+{
+	int wtd;
+	cout<<"Press 1 for signup. And 2 to login, if you're already a user: ";
+        cin>>wtd;
+        if(wtd==1)  renderSignup();
+        else if(wtd==2) renderLogin();
+        else
+	{
+		cout<<"Invalid entry. Please try again!"<<endl;
+		renderWhat();
+	}
+}
 
+void renderHomepage()
+{
+        cout<<"        HOMEPAGE!          "<<endl;
+        renderWhat();
+}
+
+int main()
+{
+	renderHomepage();
+	return 0;
+}
